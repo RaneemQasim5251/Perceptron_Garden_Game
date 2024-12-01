@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perceptron Interactive Learning Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌼 Perceptron Interactive Learning Game 🌼</h1>
+    <p id="quote">"Train the flowers, and find the perfect decision boundary!"</p>
+    <button id="toggleDarkMode">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <main>
+    <section id="visualization">
+      <h2>🔍 Perceptron Algorithm Visualization</h2>
+      <p>Observe how the Perceptron adjusts weights and evolves its decision boundary during training.</p>
+      <div id="scatterplot" class="responsive"></div>
+      <div id="controls">
+        <button onclick="trainPerceptron()">Train Perceptron</button>
+        <button onclick="testPerceptron()">Test Perceptron</button>
+        <button onclick="resetGame()">Reset Game</button>
+        <input type="file" id="uploadDataset" accept=".csv" hidden>
+        <button onclick="uploadDataset()">Upload Dataset</button>
+      </div>
+      <p id="accuracy">Accuracy: 0%</p>
+      <p id="score">Score: 0</p>
+      <div id="loader" class="hidden">Loading...</div>
+    </section>
+
+    <section id="feature-importance">
+      <h2>📊 Feature Importance Analysis</h2>
+      <p>Visualize the impact of each feature on classification decisions.</p>
+      <div id="featureWeights"></div>
+    </section>
+
+    <section id="data-exploration">
+      <h2>📈 Data Exploration Tools</h2>
+      <div id="scatterplotMatrix" class="responsive"></div>
+      <div id="histograms" class="responsive"></div>
+    </section>
+
+    <section id="algorithm-explanation">
+      <h2>📖 Step-by-Step Algorithm Explanation</h2>
+      <button onclick="toggleExplanation()">Toggle Explanation</button>
+      <div id="explanation-content" class="collapsible">
+        <ul>
+          <li><b>Linear separability</b>: Data points separated by a straight line.</li>
+          <li><b>Weight updates</b>: Adjusting weights to reduce errors.</li>
+          <li><b>Convergence</b>: The algorithm stops when no further updates are needed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="misclassification">
+      <h2>🚨 Misclassification Highlighting</h2>
+      <div id="misclassifiedPoints"></div>
+    </section>
+
+    <section id="advanced-visualization">
+      <h2>🌀 3D Decision Boundary Visualization</h2>
+      <canvas id="decisionBoundary3D" class="responsive"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created with ❤️ by Raneem Qasim</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
